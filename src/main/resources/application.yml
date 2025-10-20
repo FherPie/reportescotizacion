@@ -1,0 +1,22 @@
+server:
+  port: 8092
+spring:
+  application:
+    name:
+      papacotizacion
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/papacotizador?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+    password: andres
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  cors:
+    allowed-origins: http://localhost:8080,https://app.mylab.local,http://localhost:4200
+    allowed-methods: GET,POST,PUT,DELETE,PATCH,OPTIONS
+    allowed-headers: Authorization,Content-Type,X-Requested-With,Accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Credential
