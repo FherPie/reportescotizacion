@@ -1,6 +1,8 @@
 package com.papaimportaciones.papacotizacion.controlador;
 
+import com.papaimportaciones.papacotizacion.entidades.Cabecera;
 import com.papaimportaciones.papacotizacion.reportes.ReporteService;
+import com.papaimportaciones.papacotizacion.servicios.CotizacionReporteServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,13 +19,16 @@ public class ReporteControlador {
 
     public ReporteControlador(ReporteService reporteService) {
         this.reporteService = reporteService;
+
     }
 
     @GetMapping("/reporte")
     public ResponseEntity<byte[]> generateReporte(){
 
+
+
         try {
-            byte[] reporte= reporteService.generarReporte("practica");
+            byte[] reporte= reporteService.generarReporte("cotizacion");
             HttpHeaders headers= new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_PDF);
             headers.add("Content-Disposition", "inline; filename=cotizacion.pdf");

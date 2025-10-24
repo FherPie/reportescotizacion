@@ -1,14 +1,136 @@
 <!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
 <jasperReport name="cotizacion" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d1dfa9de-80dd-42d7-bdfb-32067668660e">
-	<query language="sql"><![CDATA[]]></query>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL CONNECTION"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="343"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="648"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="metrosLineales" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<query language="sql"><![CDATA[SELECT *
+FROM `papacotizador`.detalle;
+]]></query>
+	<field name="cantidad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cantidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle"/>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle"/>
+	</field>
+	<field name="precioUnitario" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="precio_unitario"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio_unitario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle"/>
+	</field>
 	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch"/>
-	<pageHeader height="35" splitType="Stretch"/>
-	<columnHeader height="61" splitType="Stretch"/>
+	<title height="208" splitType="Stretch">
+		<element kind="staticText" uuid="eb0e7a10-aa67-49a8-a5bb-f6dfc4a4ee04" x="120" y="20" width="320" height="30" forecolor="#030303" fontSize="22.0" italic="true" bold="true" hTextAlign="Center">
+			<text><![CDATA[CERCAS Y MALLAS IMPORT
+]]></text>
+		</element>
+		<element kind="textField" uuid="7de92a53-2695-4cc8-90a7-805a1a41b4fa" x="10" y="120" width="270" height="14" bold="true">
+			<expression><![CDATA["Señor Constructor :  "+$P{nombreCliente}]]></expression>
+		</element>
+		<element kind="textField" uuid="6eca2513-9a2f-422a-9633-106b2eb8057c" x="160" y="170" width="210" height="19" hTextAlign="Center">
+			<expression><![CDATA[$P{metrosLineales}+  "metros lineales"
+]]></expression>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid"/>
+			</box>
+		</element>
+		<element kind="image" uuid="7ccf3e57-0a18-405c-9f50-01f23bba1aec" x="0" y="0" width="120" height="104">
+			<expression><![CDATA["C:/Users/LENOVO/OneDrive/Imágenes/PAPAIMPORTS/grispapa.png"]]></expression>
+		</element>
+		<element kind="image" uuid="85639261-7b4c-4999-97b5-2e09dd95ed38" x="440" y="0" width="120" height="104">
+			<expression><![CDATA["C:/Users/LENOVO/OneDrive/Imágenes/PAPAIMPORTS/grispapa.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="8ad8c189-5622-4dab-9d79-4c74d0ed8011" x="140" y="60" width="290" height="30" bold="true" hTextAlign="Center">
+			<text><![CDATA[ Cerca PLUS reforzada postes sin placa VERDE h= 1.30
+ TERRENO PLANO SIN ALAMBRES DE PUAS]]></text>
+		</element>
+		<element kind="staticText" uuid="d1a61608-b163-42b6-a65a-e7ae9d496996" x="10" y="150" width="562" height="30" bold="true">
+			<text><![CDATA[ Por medio de la presente y de acuerdo a la información proporcionada, ponemos a su consideración nuestra oferta por:
+]]></text>
+		</element>
+	</title>
+	<columnHeader height="34" splitType="Stretch">
+		<element kind="staticText" uuid="7322ddea-8bb1-4411-8829-a6eec413b0b6" x="0" y="0" width="100" height="13" bold="true">
+			<text><![CDATA[Código]]></text>
+		</element>
+		<element kind="staticText" uuid="ed2facb8-6e69-46a4-9ee4-3831bc0eab27" x="100" y="0" width="250" height="17" bold="true" hTextAlign="Center">
+			<text><![CDATA[Descripción]]></text>
+		</element>
+		<element kind="staticText" uuid="1a98e432-aa5e-441b-88b5-07707988594a" x="350" y="0" width="100" height="13" bold="true" hTextAlign="Right">
+			<text><![CDATA[Precio Unitario]]></text>
+		</element>
+		<element kind="staticText" uuid="179bf7c8-62de-4f0b-9181-33e488df32e4" x="450" y="0" width="100" height="13" bold="true" hTextAlign="Right">
+			<text><![CDATA[Valor Total]]></text>
+		</element>
+	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="26" splitType="Stretch">
+			<element kind="textField" uuid="51ce1b36-0ec8-4267-ae3e-1648e4b506af" x="0" y="4" width="100" height="20">
+				<expression><![CDATA[$F{codigo}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ba1dab3-a058-4ef4-aa9b-39d1c0032c44"/>
+			</element>
+			<element kind="textField" uuid="665d1a4c-c165-4488-86e3-746c8d2a443f" x="100" y="4" width="250" height="20" hTextAlign="Center">
+				<expression><![CDATA[$F{descripcion}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d3c2803-a37b-4b7a-9cab-3785e7bd9121"/>
+			</element>
+			<element kind="textField" uuid="f8e3ac46-2269-4bcd-83c4-b02d3c7c4bd7" x="350" y="4" width="100" height="20" hTextAlign="Right">
+				<expression><![CDATA[$F{precioUnitario}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ac34729-7a7f-402b-8285-223e1e645f57"/>
+			</element>
+		</band>
 	</detail>
-	<columnFooter height="45" splitType="Stretch"/>
-	<pageFooter height="54" splitType="Stretch"/>
-	<summary height="42" splitType="Stretch"/>
+	<pageFooter height="50">
+		<element kind="rectangle" uuid="6c5364c7-3adc-443a-b1d7-b5d17336acb6" x="0" y="11" width="348" height="28" backcolor="#BE0AFF">
+			<pen lineColor="#FFFFFF"/>
+		</element>
+		<element kind="staticText" uuid="006ed45e-60c4-4270-971a-41033ef516e5" key="" x="34" y="16" width="223" height="19" forecolor="#FFFFFF" backcolor="rgba(151, 53, 171, 0.9607843)" bold="true">
+			<text><![CDATA[El mejor servicio y la mejor calidad]]></text>
+			<box>
+				<pen lineWidth="1.0" lineColor="#8923E8"/>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+	</pageFooter>
+	<summary height="528" splitType="Stretch">
+		<element kind="textField" uuid="3976ba13-08d9-4c08-9cab-1645decd8f6a" x="0" y="20" width="100" height="14" bold="true">
+			<expression><![CDATA["Fecha :  "+ $P{fecha}]]></expression>
+		</element>
+		<element kind="staticText" uuid="519bb5ee-1e1b-4095-bdb9-00db642fe3b4" x="0" y="40" width="170" height="19" bold="true">
+			<text><![CDATA[Validez de la oferta: 15 días]]></text>
+		</element>
+		<element kind="staticText" uuid="5c6a74ee-9a8c-4571-9f80-34aabc4668fe" x="0" y="60" width="219" height="19" bold="true">
+			<text><![CDATA[Forma de pago: contado a convenir]]></text>
+		</element>
+		<element kind="staticText" uuid="707b782e-987e-4b62-b5e3-5be79f07cf78" x="10" y="100" width="219" height="19" bold="true">
+			<text><![CDATA[Atentamente,]]></text>
+		</element>
+		<element kind="staticText" uuid="a9bfb96f-5c87-45d2-ad28-1437f5b15c5d" x="10" y="160" width="219" height="19" bold="true">
+			<text><![CDATA[Wilson Cañadas]]></text>
+		</element>
+		<element kind="staticText" uuid="bbb4cf02-6c16-46d5-be9d-e625a85064d3" x="10" y="179" width="219" height="19" bold="true">
+			<text><![CDATA[*0992767235]]></text>
+		</element>
+		<element kind="break" uuid="28f08efb-93c8-4ffe-be03-c634bdb9feb2" x="0" y="200" width="98" height="1"/>
+		<element kind="staticText" uuid="96fff880-3c2e-44f8-b7bf-35c6997a27cf" x="10" y="240" width="219" height="19" bold="true">
+			<text><![CDATA[Que Ofrecemos!]]></text>
+		</element>
+	</summary>
 </jasperReport>
