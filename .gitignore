@@ -1,8 +1,11 @@
 HELP.md
-target/
+*.class
+*.dump
+*.lst
 .mvn/wrapper/maven-wrapper.jar
-###!**/src/main/**/target/###
+!**/src/main/**/target/
 !**/src/test/**/target/
+!target/papacotizacion-0.0.1-SNAPSHOT.jar
 
 ### STS ###
 .apt_generated
@@ -31,3 +34,12 @@ build/
 
 ### VS Code ###
 .vscode/
+target/classes/application.properties
+target/classes/application.yml
+target/classes/reportes/cotizacion.jasper
+target/classes/reportes/cotizacion.jrxml
+target/maven-archiver/pom.properties
+target/papacotizacion-0.0.1-SNAPSHOT.jar.original
+target/surefire-reports/2025-10-24T08-15-53_192-jvmRun1.dumpstream
+target/surefire-reports/com.papaimportaciones.papacotizacion.PapacotizacionApplicationTests.txt
+target/surefire-reports/TEST-com.papaimportaciones.papacotizacion.PapacotizacionApplicationTests.xml
