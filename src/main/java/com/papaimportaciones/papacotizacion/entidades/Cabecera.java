@@ -27,6 +27,7 @@ public class Cabecera implements Serializable {
     private String nombre;
     @NotNull
     private String descripcion;
+    private String telefono;
     @NotNull
     private String codigo;
     @NotNull
